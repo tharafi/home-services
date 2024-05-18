@@ -21,6 +21,7 @@ function CategorySidebar({ categoryList, onSelect }) {
             <h2>{category.title}</h2>
           </div>
         ))}
+        
       </div>
     </div>
   );
