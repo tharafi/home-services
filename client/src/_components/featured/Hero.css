@@ -1,0 +1,16 @@
+.hero {
+  min-height: 70vh;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  /* gap: 2rem; */
+  padding: 0 8%;
+}
+.hero-img {
+  margin: auto;
+  max-width: 363px;
+}
+.hero-img img {
+  width: 150%;
+}

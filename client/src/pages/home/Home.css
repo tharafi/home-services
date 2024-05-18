@@ -1,0 +1,144 @@
+.features {
+  padding: 48px 40px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  /* background-color: #D7D7FD; */
+}
+.features .container {
+  position: relative;
+}
+.features .image {
+  width: 950px;
+  height: 500px;
+  margin-left: 15%;
+}
+.features .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.features .box {
+  position: absolute;
+  width: 346px;
+  height: 400px;
+  padding: 24px;
+  top: 10%;
+  left: 8%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.features .box h2 {
+  margin-left: 10px;
+  text-align: start;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 133%;
+  letter-spacing: normal;
+  color: #1a1e1d;
+  color: #0a2b14;
+}
+.features .box .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+.features .box .info p{
+  margin: 0;
+  font-family: "Inter", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137%;
+  letter-spacing: -0.005em;
+  color: #1A1E1D;
+  color: #0A2B14;
+  /* display: flex; */
+  text-align: left;
+  margin-top: 2px;
+}
+.features .box .info .number{
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 24px;
+  min-height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+}
+.features .box .number span {
+  font-size: 20px;
+  line-height: 133%;
+  letter-spacing: normal;
+  color: #1A1E1D;
+  color: #0A2B14;
+}
+/*  */
+
+.about {
+  padding: 48px 40px;
+  width: 100%;
+  margin-bottom: 100px;
+
+}
+.about .title {
+  text-align: center;
+  margin-top: 10px;
+}
+.about .title h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+.about .title p {
+  font-size: 18px;
+  color: #777;
+  width: 600px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.about .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+}
+.about .text {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.about .text .test {
+  padding: 10px;
+  width: 250px;
+  border-radius: 3px;
+}
+.about .text h1 {
+  font-size: 28px;
+  width: 300px;
+  font-weight: 300;
+}
+.about .text h1 span {
+  font-weight: 400;
+  font-size: 30px;
+}
+.about .text  p {
+  color: #777;
+  width: 400px;
+  font-size: 20px;
+}
+.about .image {
+  width: 520px;
+  height: 300px;
+  margin: 25px;
+}
+.about .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}

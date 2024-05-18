@@ -1,0 +1,28 @@
+/* .user {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  position: relative;
+}
+.user img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user .options {
+  position: absolute;
+  right: 0;
+  border: 1px solid lightgray;
+  top: 50px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: gray;
+  width: 200px;
+  font-weight: 300;
+} */
