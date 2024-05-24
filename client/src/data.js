@@ -1,32 +1,32 @@
 export const cards = [
   {
     id: 1,
-    title: "Cleaning",
+    title: "cleaning",
     img: "https://us-east-1-shared-usea1-02.graphassets.com/clu1960rv00w608ld9c9b673z/clumralk8a2e408llf7rxb1tw",
   },
   {
     id: 2,
-    title: "Repair",
+    title: "repair",
     img: "https://us-east-1-shared-usea1-02.graphassets.com/clu1960rv00w608ld9c9b673z/clu1g0aj142vw07lg2sohm6jl",
   },
   {
     id: 3,
-    title: "Painting",
+    title: "painting",
     img: "https://us-east-1-shared-usea1-02.graphassets.com/clu1960rv00w608ld9c9b673z/clu1g29uy43cr07ld7y1gie4t",
   },
   {
     id: 4,
-    title: "Shifting",
+    title: "shifting",
     img: "https://us-east-1-shared-usea1-02.graphassets.com/clu1960rv00w608ld9c9b673z/clumrg76ra3mt07lleqwpk72j",
   },
   {
     id: 5,
-    title: "Plumbing",
+    title: "plumbing",
     img: "https://us-east-1-shared-usea1-02.graphassets.com/clu1960rv00w608ld9c9b673z/clu1gc3h24a0807lgcg2tkmgx",
   },
   {
     id: 6,
-    title: "Electric",
+    title: "electric",
     img: "https://us-east-1-shared-usea1-02.graphassets.com/clu1960rv00w608ld9c9b673z/clu1ggjv34cth07lg8yf1zf2j",
   },
 ];

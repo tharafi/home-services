@@ -1,28 +1,25 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import CategoryList from "@/_components/category/CategoryList";
 import Hero from "@/_components/featured/Hero";
 import BusinessList from "@/_components/popular project/BusinessList";
 import { cards, projects } from "@/data";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 import "./Home.css";
 
 function Home() {
   const navigate = useNavigate();
-  
-  const handleCategorySelect = (category) => {
-    navigate(`/services?cat=${category}`);
-  };
-  
 
+  const handleCategorySelect = (category) => {
+    navigate(`/services?category=${category}`);
+  };
 
   return (
     <div>
       <Hero />
       <CategoryList categoryList={cards} onSelect={handleCategorySelect} />
       <BusinessList businessList={projects} title={"Popular Project"} />
-      <div className="features  bg-purple-50">
-        <div className=" container mx-auto px-4">
+      <div className="features bg-purple-50">
+        <div className="container mx-auto px-4">
           <div className="image">
             <img
               src="https://images.unsplash.com/photo-1581578731256-de834a1fc8af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

@@ -1,6 +1,4 @@
 import React from "react";
-import { cards } from "@/data";
-import { Link } from "react-router-dom";
 
 function CategorySidebar({ categoryList, onSelect }) {
   const handleCategoryClick = (category) => {
@@ -11,7 +9,7 @@ function CategorySidebar({ categoryList, onSelect }) {
     <div>
       <h2 className="font-bold mb-3 text-lg text-primary">Categories</h2>
       <div>
-        {cards.map((category, index) => (
+        {categoryList.map((category, index) => (
           <div 
             key={index}
             onClick={() => handleCategoryClick(category.title)} 
@@ -21,11 +19,9 @@ function CategorySidebar({ categoryList, onSelect }) {
             <h2>{category.title}</h2>
           </div>
         ))}
-        
       </div>
     </div>
   );
 }
 
 export default CategorySidebar;
-

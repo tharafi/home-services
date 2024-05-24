@@ -1,30 +1,37 @@
-import CategorySidebar from "@/_components/categorySidebar/CategorySideBar";
-import BusinessList from "@/_components/popular project/BusinessList";
-import ServiceCard from "@/_components/serviceCard/ServiceCard";
-import { cards, gigs, projects } from "@/data";
-import newRequest from "@/utils/newRequest";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import CategorySidebar from "@/_components/categorySidebar/CategorySideBar";
+import ServiceCard from "@/_components/serviceCard/ServiceCard";
+import { cards } from "@/data";
+import newRequest from "@/utils/newRequest";
 
 function Services() {
-  const { search } = useLocation();
-  const searchParams = new URLSearchParams(search);
-  const category = searchParams.get("cat");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const searchParams = new URLSearchParams(location.search);
+  const initialCategory = searchParams.get("category");
 
+  const [category, setCategory] = useState(initialCategory  || "");
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["services"],
+    queryKey: ["services", category],
     queryFn: () =>
-      newRequest.get(`/services${search}`).then((res) => res.data),
-    });
+      newRequest.get(`/services?category=${category}`).then((res) => res.data),
+    enabled: !!category,
+  });
 
+
+  const handleCategorySelect = (selectedCategory) => {
+    setCategory(selectedCategory);
+    navigate(`?category=${selectedCategory}`);
+  };
 
   return (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-4 mt-8">
         <div>
-          <CategorySidebar categoryList={cards} />
+          <CategorySidebar categoryList={cards} onSelect={handleCategorySelect} />
         </div>
         <div className="col-span-3">
           {isLoading ? (
@@ -33,7 +40,7 @@ function Services() {
             "Something went wrong!"
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
-              {data.map((service) => (
+              {data && data.map((service) => (
                 <ServiceCard key={service._id} item={service} />
               ))}
             </div>
@@ -45,4 +52,3 @@ function Services() {
 }
 
 export default Services;
-

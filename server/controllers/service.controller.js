@@ -4,7 +4,7 @@ import createError from "../utils/createError.js"
 
 export const createService = async (req, res, next) => {
   if(!req.isSeller) {
-    return next(createError(403, "Only sellers can create a gig!"))
+    return next(createError(403, "Only sellers can create a service!"))
   }
   const newService = new Service({
     userId: req.userId,
@@ -45,7 +45,7 @@ export const getServices = async (req, res, next) => {
     const q = req.query;
     const filters = {
       ...(q.userId &&{userId: q.userId}),
-      ...(q.category &&{category: q.category}),
+      ...(q.category &&{category: q.category }),
       ...(q.search && {title: {$regex: q.search, $options: "i"}})  
     }
     const services = await Service.find(filters);
