@@ -10,17 +10,25 @@ function Services() {
   const location = useLocation();
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
-  const initialCategory = searchParams.get("category");
+  const searchQuery = searchParams.get("search") || "";
 
-  const [category, setCategory] = useState(initialCategory  || "");
+  const [category, setCategory] = useState(searchParams.get("category") || "");
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["services", category],
-    queryFn: () =>
-      newRequest.get(`/services?category=${category}`).then((res) => res.data),
-    enabled: !!category,
+    queryKey: ["services", category, searchQuery],
+    queryFn: () => {
+      const url = searchQuery ? `/services?search=${searchQuery}` : `/services?category=${category}`;
+      return newRequest.get(url).then((res) => res.data);
+    },
   });
 
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const newCategory = params.get("category");
+    if (newCategory !== category) {
+      setCategory(newCategory);
+    }
+  }, [location.search]);
 
   const handleCategorySelect = (selectedCategory) => {
     setCategory(selectedCategory);

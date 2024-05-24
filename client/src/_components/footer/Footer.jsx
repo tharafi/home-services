@@ -4,7 +4,7 @@ import "./Footer.css"
 
 function Footer() {
   return (
-    <div className='footer '>
+    <div className='footer mt-4'>
       <div className="container mx-auto px-4">
         <div className="top">
           <div className="item">
@@ -32,16 +32,6 @@ function Footer() {
             <span>Taskrabbit for Good</span>
             <span>Blog</span>
           </div>
-          
-
-
-
-
-
-
-
-
-
           <div className="item">
             <h2>Terms& Privacy</h2>
             <span>California Consumer Notice</span>
